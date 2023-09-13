@@ -1,0 +1,29 @@
+package com.methodrefernace;
+
+public class MethodReferanceExample1 {
+
+	public static void main(String[] args) {
+		
+		Test t = (e)-> MethodReferanceExample1.show(e);
+	 Test t1 =MethodReferanceExample1::show;
+	 t1.display(30);
+	 t.display(30);
+	 
+//	 Test t2 = (e) ->new MethodReferanceExample1().add(e);
+	 MethodReferanceExample1 mr = new MethodReferanceExample1();
+	 Test t2 = (e) ->mr.add(e);
+			
+	}
+	static void show(int i) {
+		int c= i+1000;
+		int x= (i*10 )/100;
+		System.out.println(x);
+	}
+	 void add(int i) {
+		int c= i+1000;
+		int x= (i*10 )/100;
+		System.out.println(x);
+	}
+
+
+}

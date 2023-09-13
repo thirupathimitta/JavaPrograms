@@ -1,0 +1,32 @@
+package com.generics;
+
+public class Exp2<T1,T2> {
+	
+	 int empId ;
+	T2 empName;
+
+
+	public Exp2(int empId, T2 empName) {
+	
+		this.empId = empId;
+		this.empName = empName;
+
+	}
+	public void print() {
+		
+		System.out.println(empId+","+empName);
+	}
+
+	public static void main(String[] args) {
+		
+		Exp2 <Integer,String> ex = new Exp2(100,"thiru");
+		Exp2 <String,String> ex1 = new Exp2(101,"vijay");
+		
+		ex.print();
+		ex1.print();
+		
+		
+
+	}
+
+}

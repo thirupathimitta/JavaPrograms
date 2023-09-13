@@ -1,0 +1,27 @@
+package com.mavenexample.secondSpring;
+
+public class Car {
+ 
+	public Car() {
+		System.out.println("car class Constructor!");
+	}
+	private DieselEngine dieselEngine ;
+	
+	public void setDieselEngine(DieselEngine dieselEngine) {
+		this.dieselEngine = dieselEngine;
+	}
+	
+//	public Car(DieselEngine dieselEngine) {
+//		
+//		this.dieselEngine = dieselEngine;
+//	}
+	public void drive() {
+		int result = dieselEngine.start();
+		String message = (result >=1) ? "car started jounrney":"engine has problem";
+		System.out.println(message);
+	}
+
+
+	
+	
+}

@@ -1,0 +1,68 @@
+package com.multiThreadingExtendningThreadClass;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+public class Find_Even_Odd_Number {
+    private static final int MAX_NUMBER = 20;
+    private static Lock lock = new ReentrantLock();
+    private static Condition evenTurn = lock.newCondition();
+    private static boolean isEvenTurn = true;
+
+    public static void main(String[] args) {
+        Thread evenThread = new Thread(new EvenRunnable());
+        Thread oddThread = new Thread(new OddRunnable());
+
+        evenThread.start();
+        oddThread.start();
+    }
+
+    static class EvenRunnable implements Runnable {
+        @Override
+        public void run() {
+            for (int i = 2; i <= MAX_NUMBER; i += 2) {
+                lock.lock();
+                try {
+                    while (!isEvenTurn) {
+                        try {
+                            evenTurn.await();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    System.out.println("Even Number from evenThread: " + i);
+                    isEvenTurn = false;
+                    evenTurn.signal();
+                } finally {
+                    lock.unlock();
+                }
+            }
+        }
+    }
+
+    static class OddRunnable implements Runnable {
+        @Override
+        public void run() {
+            for (int i = 1; i <= MAX_NUMBER; i += 2) {
+                lock.lock();
+                try {
+                    while (isEvenTurn) {
+                        try {
+                            evenTurn.await();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    System.out.println("Odd Number from oddThread: " + i);
+                    isEvenTurn = true;
+                    evenTurn.signal();
+                } finally {
+                    lock.unlock();
+                }
+            }
+        }
+    }
+}

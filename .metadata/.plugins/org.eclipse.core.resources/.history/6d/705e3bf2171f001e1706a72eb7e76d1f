@@ -1,0 +1,34 @@
+package com.multiThreading;
+
+public class Test {
+
+	
+	
+	public static void main(String[] args) throws InterruptedException {
+
+		MultiThreadExp1 mte1 = new MultiThreadExp1();
+		
+		Thread t = new Thread(mte1);
+		
+		
+		mte1.start();
+		mte1.setName("child1");
+		MultiThreadExp1 mte2 = new MultiThreadExp1();
+		mte2.start();
+		mte2.setName("child2");
+
+		for (int i = 0; i <= 10; i++) {
+			Thread.sleep(1500);
+			if(i==5) {
+				mte1.suspend();
+			}
+			if(i==10) {
+				mte1.resume();
+			}
+			
+			System.out.println("main method : " + i);
+			
+
+		}
+	}
+}

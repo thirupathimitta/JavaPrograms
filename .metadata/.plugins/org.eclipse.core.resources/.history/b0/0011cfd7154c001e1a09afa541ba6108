@@ -1,0 +1,5 @@
+package com.methodrefernace;
+
+public interface Test {
+
+}

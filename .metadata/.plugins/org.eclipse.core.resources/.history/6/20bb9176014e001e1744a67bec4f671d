@@ -1,0 +1,27 @@
+package com.lambdaexpression;
+
+public class Example1 {
+
+	public static void main(String[] args) {
+		Test1 t1 = ()->System.out.println("hi");
+		t1.display();
+		
+	}
+
+}
+
+@FunctionalInterface
+ interface Test1 {
+	void display();
+}
+
+@FunctionalInterface
+interface Test2 {
+	void cude(int i);
+	
+}
+@FunctionalInterface
+interface Test3 {
+	void cude(int i);
+	
+}

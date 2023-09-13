@@ -1,0 +1,19 @@
+package com.multiThreadingExtendningThreadClass;
+
+import java.io.IOException;
+
+public class ProcessExample {
+    public static void main(String[] args) {
+        try {
+            ProcessBuilder processBuilder = new ProcessBuilder("command", "arg1", "arg2");
+            Process process = processBuilder.start();
+
+            // Wait for the process to complete
+            int exitCode = process.waitFor();
+            System.out.println("Process exited with code: " + exitCode);
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+

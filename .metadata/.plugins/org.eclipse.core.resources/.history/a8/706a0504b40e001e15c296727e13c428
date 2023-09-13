@@ -1,0 +1,10 @@
+package com.methodsOnStrings;
+
+public class practice1Method {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

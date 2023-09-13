@@ -1,0 +1,18 @@
+package com.examplespringboot;
+
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
+
+
+@component
+
+public class CacheManager implements ApplicationRunner {
+
+
+	@Override
+	public void run(ApplicationArguments args) throws Exception {
+		System.out.println("logic for getting data from the database");
+		
+	}
+
+}

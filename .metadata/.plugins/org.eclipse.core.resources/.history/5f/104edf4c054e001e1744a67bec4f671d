@@ -1,0 +1,50 @@
+package com.lambdaexpression;
+
+public class Example1 {
+
+	public static void main(String[] args) {
+		Test1 t1 = () -> System.out.println("hi");
+		t1.display();
+		
+		Test2 t2 = (x) -> System.out.println(x * x * x);
+		t2.cude(3);
+		
+		Test3 t3 = (x) -> {
+			x = x * x * x;
+			if(x==9) {
+				System.out.println("its cube value");
+				return true;
+			}
+			else return false;
+		};
+		t3.checkCube(3);
+	}
+
+}
+
+@FunctionalInterface
+interface Test1 {
+	void display();
+}
+
+@FunctionalInterface
+interface Test2 {
+	void cude(int i);
+
+}
+
+@FunctionalInterface
+interface Test3 {
+	boolean checkCube(int i);
+
+}
+
+@FunctionalInterface
+interface Test4 {
+	String show();
+}
+
+@FunctionalInterface
+interface Test5 {
+	String show(int i);
+}

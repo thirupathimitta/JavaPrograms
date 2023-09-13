@@ -1,0 +1,14 @@
+package com.functionalinterface;
+
+public class ConsumerExp1 {
+
+	public static void main(String[] args) {
+		
+		Consumer<String> c = (name) -> System.out.println(name + ", Good Evening");
+
+		c.accept("Ashok");
+		c.accept("John");
+		c.accept("Rani");
+	}
+
+}

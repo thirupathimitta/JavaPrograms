@@ -1,0 +1,47 @@
+package com.streams;
+
+import java.util.stream.IntStream;
+
+public class StreamvsPrarallelSteam {
+
+	public static void main(String[] args) {
+
+		long start = 0;
+		long end = 0;
+		System.out.println("plain Stream operation");
+		start = System.currentTimeMillis();
+		IntStream.range(0, 100).forEach(p -> System.out.print(p + ""));
+		end = System.currentTimeMillis();
+		System.out.println();
+		System.out.println("stream operation took " + (end - start) + "seconds");
+		// ====================================================
+		System.out.println("parallel Stream operation");
+		start = System.currentTimeMillis();
+		IntStream.range(0, 100).parallel().forEach(p -> System.out.print(p + " "));
+		end = System.currentTimeMillis();
+		System.out.println();
+		System.out.println("parallel stream operation took " + (end - start) + "seconds");
+		
+		
+		
+		
+		//===========================================
+		
+		IntStream.range(0, 10).forEach(x->System.out.println(Thread.currentThread().getName() +" "+x));
+		IntStream.range(0, 10).parallel().forEach(x->System.out.println(Thread.currentThread().getName() +" "+x));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	}
+
+}

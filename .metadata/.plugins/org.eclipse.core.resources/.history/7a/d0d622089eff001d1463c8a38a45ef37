@@ -1,0 +1,18 @@
+package com.patterns;
+
+public class Pattern11 {
+
+	public static void main(String[] args) {
+		int size = 5;
+
+		for (int i = size; i >= 1; i--) {
+		    for (int j = i; j <= size; j++) {
+		        System.out.print((char) (j + 64));
+		    }
+		    System.out.println();
+		}
+
+
+	}
+
+}

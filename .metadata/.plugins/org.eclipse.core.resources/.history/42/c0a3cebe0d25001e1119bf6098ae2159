@@ -1,0 +1,5 @@
+package com.callableInterface;
+
+public class SumCallable {
+
+}

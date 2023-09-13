@@ -1,0 +1,36 @@
+package com.stringsAssignments;
+
+public class ConvertSnakeCaseStringToCamelCasePage4_8 {
+
+	
+
+		public static void main(String[] args) {
+
+			String str = "geeks_for_geeks";
+			String str2="thiru";
+			StringBuilder str1=new StringBuilder(str2);
+			System.out.println(str1.replace(2,3,String.valueOf(Character.toUpperCase(str1.charAt(2)))));
+
+			
+			str = str.substring(0, 1).toUpperCase() + str.substring(1);
+
+			StringBuilder builder = new StringBuilder(str);
+
+			for (int i = 0; i < builder.length(); i++) {
+				// Check char is underscore
+				if (builder.charAt(i) == '_') {
+					builder.deleteCharAt(i);
+				char ch =	Character.toUpperCase(builder.charAt(i));
+//					builder.reverse()
+				System.out.println(	ch);//i=5=>f
+//					builder.replace(i, i+1, String.valueOf(Character.toUpperCase(builder.charAt(i))));
+				}
+			}
+
+			// Print the converted string
+			System.out.println(builder.toString());
+		}
+	
+
+
+}

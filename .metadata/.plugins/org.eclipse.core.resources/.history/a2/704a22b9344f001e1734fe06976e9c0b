@@ -1,0 +1,59 @@
+package com.lambdaexpression;
+
+import java.util.function.Consumer;
+import java.util.function.Predicate;
+
+public class Example2 {
+
+	public static void main(String[] args) {
+		Test1 t1 = () -> System.out.println("hi");
+		t1.display();
+		
+		
+		Consumer<Integer> t2 = (x) -> System.out.println(x*x);
+		t2.accept(3);
+		
+//		Predicate t3 = (x) -> {
+//			x = x * x * x;
+//			if(x==9) {
+//				System.out.println("its cube value");
+//				return true;
+//			}
+//			else return false;
+//		};
+//		boolean result = t3.test(3);
+//		if (result) {
+//		    System.out.println("It's cube value");
+//		}
+
+	}
+
+}
+
+@FunctionalInterface
+interface Test1 {
+	void display();
+
+}
+
+@FunctionalInterface
+interface Test2 {
+	void cube(int i);
+
+}
+
+@FunctionalInterface
+interface Test3 {
+	boolean checkCube(int i);
+
+}
+
+@FunctionalInterface
+interface Test4 {
+	String show();
+}
+
+@FunctionalInterface
+interface Test5 {
+	String show(int i);
+}

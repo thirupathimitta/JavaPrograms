@@ -1,0 +1,23 @@
+package com.patterns;
+
+public class Pattern11 {
+
+	public static void main(String[] args) {
+		
+
+		for (int i = 5; i >= 1; i--) {
+			for(int l=1;l<=5;l++) {
+			for(int k=1;k<=5-l;k++) {
+				System.out.print(" ");
+			}
+			}
+		    for (int j = i; j <= 5; j++) {
+		    	
+		        System.out.print((char) ('e' - (5 - j)));
+		    }
+		    System.out.println();
+		}
+
+	}
+
+}

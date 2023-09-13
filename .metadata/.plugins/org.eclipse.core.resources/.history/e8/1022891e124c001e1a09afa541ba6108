@@ -1,0 +1,54 @@
+package com.streams;
+
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import com.java8.collectionsenhancements.Employee;
+
+public class ForEachVsForEachOrdered {
+	public static void main(String[] args) {
+		List<Integer> l1 = Arrays.asList(1, 2, 3, 4, 5, 1, 2, 3);
+
+		l1.stream().forEach(p -> System.out.println(p));
+		System.out.println("--------");
+		l1.stream().forEachOrdered(p -> System.out.println(p));
+
+		// ============================================
+		// example2
+		LocalDateTime startTime = null;
+		LocalDateTime endTime = null;
+		Duration d = null;
+		List<Employee> l = new ArrayList<>();
+		l.add(new Employee("Thirupathi", 100, 150000.0));
+		l.add(new Employee("vinay", 100, 120000.0));
+		l.add(new Employee("vijay", 102, 110000.0));
+		l.add(new Employee("albert", 103, 90000.0));
+		l.add(new Employee("devid", 104, 60000.0));
+
+		System.out.println("start of operation");
+		startTime = LocalDateTime.now();
+
+		l.stream().map(p -> p.getEmpName()).forEach(p -> System.out.println(p));
+
+		endTime = LocalDateTime.now();
+
+		d = Duration.between(startTime, endTime);
+		System.out.println("time taken for stream operaton is " + d.toMillis());
+
+		// ----------
+		System.out.println("start of parallel operation");
+		startTime = LocalDateTime.now();
+
+		l.parallelStream().map(p -> p.getEmpName()).forEach(p -> System.out.println(p));
+
+		endTime = LocalDateTime.now();
+
+		d = Duration.between(startTime, endTime);
+		System.out.println("time taken for parallel stream operaton is " + d.toMillis());
+
+	}
+
+}

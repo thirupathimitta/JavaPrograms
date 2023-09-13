@@ -1,0 +1,18 @@
+package com.methodrefernace;
+
+public class MethodReferanceExample1 {
+
+	public static void main(String[] args) {
+		
+		Test t = (e)-> MethodReferanceExample1.show(e);
+	 Test t1 =MethodReferanceExample1::show;
+	 
+			
+	}
+	static void show(int i) {
+		int c= i+1000;
+		int x= (i*10 )/100;
+		System.out.println(x);
+	}
+
+}

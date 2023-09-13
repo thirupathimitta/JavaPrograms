@@ -1,0 +1,25 @@
+package com.functionalinterface;
+
+public class Demo {
+
+	
+
+	public static void main(String[] args) {
+		
+		Test1 t1 = ()->System.out.println("Test1");
+
+	}
+
+
+}
+
+@FunctionalInterface
+ interface  Test1 {
+	 void show();	
+	 
+ }
+
+@FunctionalInterface
+interface Test2 extends Test1{
+	
+}

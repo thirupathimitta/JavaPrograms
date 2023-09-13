@@ -1,0 +1,19 @@
+package com.patterns;
+
+public class Pattern11 {
+
+	public static void main(String[] args) {
+		
+
+		for (int i = 5; i >= 1; i--) {
+		    for (int j = i; j <= size; j++) {
+		        System.out.print((char) ('e' - (size - j)));
+		    }
+		    System.out.println();
+		}
+
+
+
+	}
+
+}

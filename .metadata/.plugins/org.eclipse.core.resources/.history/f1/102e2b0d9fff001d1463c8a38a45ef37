@@ -1,0 +1,29 @@
+package com.patterns;
+
+public class Pattern11 {
+
+	public static void main(String[] args) {
+		
+
+		int size = 5;
+
+		for (int i = 1; i <= size; i++) {
+		    for (int j = 1; j <= size - i; j++) {
+		    	
+		        System.out.print(" ");
+		    }
+		    for (int k = i; k >= 2; k--) {
+		        System.out.print((char) ('a' + k - 2) + " ");
+		    }
+		    for (int l = 1; l <= i; l++) {
+		        System.out.print((char) ('a' + l - 1) + " ");
+		    }
+		    System.out.println();
+		}
+
+
+
+
+	}
+
+}
